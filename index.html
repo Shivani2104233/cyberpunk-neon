@@ -1,1 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cyberpunk Neon Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- GSAP for animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.14.1/gsap.min.js"></script>
+
+  <!-- Particles.js for background -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+</head>
+<body>
+
+  <!-- Particle Background -->
+  <div id="particles-js"></div>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <h1 class="glow">CYBERPUNK TENDER SYSTEM</h1>
+    <p class="sub">Futuristic Tender Dashboard</p>
+  </div>
+
+  <!-- Table Section -->
+  <div class="container">
+    <table>
+      <thead>
+        <tr>
+          <th>Tender Name</th>
+          <th>Status</th>
+          <th>Amount</th>
+          <th>Deadline</th>
+        </tr>
+      </thead>
+      <tbody id="tenderBody"></tbody>
+    </table>
+  </div>
+
+  <!-- JS files -->
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
 

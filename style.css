@@ -1,1 +1,104 @@
+/* FONT */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+body {
+  font-family: 'Orbitron', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #05010a;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  background: radial-gradient(circle, #ff00e6, #2a004d);
+}
+
+.glow {
+  font-size: 42px;
+  text-shadow: 0 0 10px #ff00f7, 0 0 20px #d400ff, 0 0 40px #8400ff;
+  animation: pulse 2s infinite alternate;
+}
+
+.sub {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #ddd;
+  animation: fadeIn 2s ease forwards;
+}
+
+/* CONTAINER & TABLE */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  margin-top: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  overflow: hidden;
+  animation: slideUp 1.5s ease-out;
+}
+
+th {
+  background: #8600ff;
+  padding: 14px;
+  font-size: 16px;
+}
+
+td {
+  padding: 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+tr:hover {
+  background: rgba(255, 0, 221, 0.2);
+}
+
+/* STATUS COLORS */
+.status {
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: bold;
+}
+.green { background: #14ff72; color: #000; }
+.red { background: #ff006e; }
+.yellow { background: #ffde59; color: #000; }
+
+/* ANIMATIONS */
+@keyframes pulse {
+  0% { text-shadow: 0 0 5px #ff00ff; }
+  50% { text-shadow: 0 0 20px #ff00ff; }
+  100% { text-shadow: 0 0 5px #ff00ff; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(50px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+/* PARTICLES POSITION */
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  top: 0;
+  left: 0;
+}
 

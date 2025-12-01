@@ -1,46 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cyberpunk Neon Dashboard</title>
+  <title>Shivani — Digital Interface</title>
   <link rel="stylesheet" href="style.css">
 
-  <!-- GSAP for animations -->
+  <!-- GSAP -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.14.1/gsap.min.js"></script>
-
-  <!-- Particles.js for background -->
+  <!-- Particles -->
   <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 </head>
+
 <body>
 
-  <!-- Particle Background -->
+  <!-- Background -->
   <div id="particles-js"></div>
 
-  <!-- Hero Section -->
-  <div class="hero">
-    <h1 class="glow">CYBERPUNK TENDER SYSTEM</h1>
-    <p class="sub">Futuristic Tender Dashboard</p>
+  <!-- MAIN DASHBOARD -->
+  <section class="hero">
+      <h1 class="glow" id="mainName">SHIVANI.exe</h1>
+      <p class="sub">System Status: <span id="statusText">Online</span></p>
+  </section>
+
+  <!-- INFO GRID (tech-style cards instead of table) -->
+  <section class="grid">
+      <div class="card">
+          <h2>User Mode</h2>
+          <p>Chill / Selective</p>
+      </div>
+
+      <div class="card">
+          <h2>Current Focus</h2>
+          <p>Learning • Coding • Exploring</p>
+      </div>
+
+      <div class="card">
+          <h2>Energy Level</h2>
+          <p id="energyLevel">Calculating...</p>
+      </div>
+
+      <div class="card">
+          <h2>Active Processes</h2>
+          <ul>
+              <li>Web Experiments</li>
+              <li>Tech Skills Upgrade</li>
+              <li>Creative Mode</li>
+          </ul>
+      </div>
+  </section>
+
+  <!-- SECRET INTERACTIVE BUTTON -->
+  <div class="center">
+      <button id="scanBtn">Run Personality Scan</button>
+      <p id="scanResult"></p>
   </div>
 
-  <!-- Table Section -->
-  <div class="container">
-    <table>
-      <thead>
-        <tr>
-          <th>Tender Name</th>
-          <th>Status</th>
-          <th>Amount</th>
-          <th>Deadline</th>
-        </tr>
-      </thead>
-      <tbody id="tenderBody"></tbody>
-    </table>
-  </div>
+  <!-- Scripts -->
+  <script>
+      // Hacker-style energy generator
+      document.getElementById("energyLevel").innerText =
+          (Math.floor(Math.random() * 40) + 60) + "%";
 
-  <!-- JS files -->
-  <script src="data.js"></script>
+      // Scan Button
+      document.getElementById("scanBtn").onclick = () => {
+          gsap.fromTo("#scanResult", {opacity:0}, {opacity:1, duration:1});
+          document.getElementById("scanResult").innerText =
+              "Scan Complete: High Confidence • Fast Learning • Zero Drama";
+      };
+
+      // Typing Glitch effect
+      gsap.fromTo("#mainName", {opacity:0}, {opacity:1, duration:2});
+  </script>
+
   <script src="script.js"></script>
 </body>
 </html>
-

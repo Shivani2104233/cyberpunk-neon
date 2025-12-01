@@ -1,5 +1,6 @@
 const tenders = [
   { name: "ABSDHGKM X-1", status: "Submitted", value: "21,00,000", deadline: "2025-01-15" },
+  { name: "ABSDHGKM X-1", status: "Submitted", value: "21,00,000", deadline: "2025-01-15" },
   { name: "ZETHR-92 Alpha", status: "Pending", value: "18,50,000", deadline: "2025-02-10" },
   { name: "CYBER-77 Node", status: "Missing Docs", value: "11,20,000", deadline: "2025-03-01" }
 ];

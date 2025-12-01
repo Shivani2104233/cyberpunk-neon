@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shivani — Digital Interface</title>
+  <title>Shivani.exe Dashboard</title>
   <link rel="stylesheet" href="style.css">
 
-  <!-- GSAP -->
+  <!-- GSAP for animations -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.14.1/gsap.min.js"></script>
-  <!-- Particles -->
+
+  <!-- Particles.js -->
   <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 </head>
-
 <body>
 
-  <!-- Background -->
+  <!-- Particle Background -->
   <div id="particles-js"></div>
 
-  <!-- MAIN DASHBOARD -->
+  <!-- HERO -->
   <section class="hero">
       <h1 class="glow" id="mainName">SHIVANI.exe</h1>
-      <p class="sub">System Status: <span id="statusText">Online</span></p>
+      <p class="sub" id="statusText">Warning: Unknown Entity Watching You 👀</p>
   </section>
 
-  <!-- INFO GRID (tech-style cards instead of table) -->
+  <!-- DASHBOARD CARDS -->
   <section class="grid">
       <div class="card">
           <h2>User Mode</h2>
@@ -37,7 +37,7 @@
 
       <div class="card">
           <h2>Energy Level</h2>
-          <p id="energyLevel">Calculating...</p>
+          <p id="energyLevel">71%</p>
       </div>
 
       <div class="card">
@@ -50,29 +50,13 @@
       </div>
   </section>
 
-  <!-- SECRET INTERACTIVE BUTTON -->
+  <!-- BUTTON -->
   <div class="center">
       <button id="scanBtn">Run Personality Scan</button>
       <p id="scanResult"></p>
   </div>
 
-  <!-- Scripts -->
-  <script>
-      // Hacker-style energy generator
-      document.getElementById("energyLevel").innerText =
-          (Math.floor(Math.random() * 40) + 60) + "%";
-
-      // Scan Button
-      document.getElementById("scanBtn").onclick = () => {
-          gsap.fromTo("#scanResult", {opacity:0}, {opacity:1, duration:1});
-          document.getElementById("scanResult").innerText =
-              "Scan Complete: High Confidence • Fast Learning • Zero Drama";
-      };
-
-      // Typing Glitch effect
-      gsap.fromTo("#mainName", {opacity:0}, {opacity:1, duration:2});
-  </script>
-
+  <!-- JS -->
   <script src="script.js"></script>
 </body>
 </html>

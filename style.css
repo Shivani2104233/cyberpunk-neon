@@ -12,7 +12,7 @@ body {
   cursor: crosshair;
 }
 
-/* SCANLINE Effect */
+/* SCANLINE EFFECT */
 body::after {
   content: "";
   position: fixed;
@@ -56,6 +56,75 @@ body::after {
   animation: fadeIn 2s ease forwards;
 }
 
+/* DASHBOARD CARDS */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  width: 90%;
+  max-width: 1200px;
+  margin: 50px auto;
+  z-index: 2;
+  position: relative;
+}
+
+.card {
+  background: rgba(0,255,242,0.05);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,255,242,0.2);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px #ff0077;
+}
+
+.card h2 {
+  margin: 0 0 10px;
+  font-size: 20px;
+  color: #ff0077;
+}
+
+.card ul li {
+  list-style: none;
+  margin: 4px 0;
+}
+
+/* BUTTON */
+.center {
+  text-align: center;
+  margin: 40px 0;
+}
+
+#scanBtn {
+  padding: 15px 30px;
+  font-size: 18px;
+  background: #ff0077;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 8px;
+  box-shadow: 0 0 20px #ff0077;
+  transition: all 0.3s ease;
+}
+
+#scanBtn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 40px #00fff2;
+}
+
+#scanResult {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #00fff2;
+  text-shadow: 0 0 15px #00fff2;
+  min-height: 24px;
+  font-family: 'Share Tech Mono', monospace;
+}
+
 /* PARTICLES */
 #particles-js {
   position: fixed;
@@ -66,25 +135,14 @@ body::after {
   left: 0;
 }
 
-/* GLITCH EFFECT */
+/* Animations */
 @keyframes flicker {
   0% { opacity: 0.9; text-shadow: 0 0 10px #00fff2; }
   50% { opacity: 1; text-shadow: 0 0 40px #00fff2; }
   100% { opacity: 0.85; text-shadow: 0 0 15px #00fff2; }
 }
 
-/* Name Hover – Pink Scary Mode */
-.glow:hover {
-  color: #ff0077;
-  text-shadow: 0 0 20px #ff0077, 0 0 50px #ff0077;
-  transform: scale(1.15);
-}
-
-/* Fade in */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px);}
   to { opacity: 1; transform: translateY(0);}
 }
-
-/* Remove old container/table completely */
-.container, table, th, td { display: none !important; }

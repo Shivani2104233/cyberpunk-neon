@@ -1,98 +1,62 @@
 /* FONT */
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
 
 body {
   font-family: 'Orbitron', sans-serif;
   margin: 0;
   padding: 0;
-  background: #05010a;
-  color: #fff;
+  background: #030008;
+  color: #00fff2;
   overflow-x: hidden;
+  cursor: crosshair;
+}
+
+/* SCANLINE Effect */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.05) 0px,
+    rgba(255,255,255,0.02) 2px,
+    transparent 4px
+  );
+  pointer-events: none;
+  z-index: 999;
+  mix-blend-mode: overlay;
 }
 
 /* HERO */
 .hero {
   text-align: center;
-  padding: 80px 20px;
-  background: radial-gradient(circle, #ff00e6, #2a004d);
+  padding: 100px 20px 70px;
+  background: linear-gradient(180deg, #0a0013, #120026, #000);
+  position: relative;
+  z-index: 2;
 }
 
 .glow {
-  font-size: 42px;
-  text-shadow: 0 0 10px #ff00f7, 0 0 20px #d400ff, 0 0 40px #8400ff;
-  animation: pulse 2s infinite alternate;
+  font-size: 60px;
+  color: #00fff2;
+  text-shadow: 0 0 15px #00eaff, 0 0 40px #00eaff;
+  transition: 0.3s ease;
+  letter-spacing: 2px;
+  animation: flicker 2s infinite alternate;
+  cursor: pointer;
 }
 
 .sub {
-  margin-top: 10px;
+  margin-top: 20px;
   font-size: 18px;
-  color: #ddd;
+  font-family: 'Share Tech Mono', monospace;
+  color: #b8ffff;
+  text-shadow: 0 0 10px #00eaff;
   animation: fadeIn 2s ease forwards;
 }
 
-/* CONTAINER & TABLE */
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: auto;
-  margin-top: 40px;
-  position: relative;
-  z-index: 1;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(10px);
-  border-radius: 10px;
-  overflow: hidden;
-  animation: slideUp 1.5s ease-out;
-}
-
-th {
-  background: #8600ff;
-  padding: 14px;
-  font-size: 16px;
-}
-
-td {
-  padding: 12px;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-}
-
-tr:hover {
-  background: rgba(255, 0, 221, 0.2);
-}
-
-/* STATUS COLORS */
-.status {
-  padding: 6px 12px;
-  border-radius: 6px;
-  font-weight: bold;
-}
-.green { background: #14ff72; color: #000; }
-.red { background: #ff006e; }
-.yellow { background: #ffde59; color: #000; }
-
-/* ANIMATIONS */
-@keyframes pulse {
-  0% { text-shadow: 0 0 5px #ff00ff; }
-  50% { text-shadow: 0 0 20px #ff00ff; }
-  100% { text-shadow: 0 0 5px #ff00ff; }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px);}
-  to { opacity: 1; transform: translateY(0);}
-}
-
-@keyframes slideUp {
-  from { opacity: 0; transform: translateY(50px);}
-  to { opacity: 1; transform: translateY(0);}
-}
-
-/* PARTICLES POSITION */
+/* PARTICLES */
 #particles-js {
   position: fixed;
   width: 100%;
@@ -102,3 +66,25 @@ tr:hover {
   left: 0;
 }
 
+/* GLITCH EFFECT */
+@keyframes flicker {
+  0% { opacity: 0.9; text-shadow: 0 0 10px #00fff2; }
+  50% { opacity: 1; text-shadow: 0 0 40px #00fff2; }
+  100% { opacity: 0.85; text-shadow: 0 0 15px #00fff2; }
+}
+
+/* Name Hover – Pink Scary Mode */
+.glow:hover {
+  color: #ff0077;
+  text-shadow: 0 0 20px #ff0077, 0 0 50px #ff0077;
+  transform: scale(1.15);
+}
+
+/* Fade in */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+/* Remove old container/table completely */
+.container, table, th, td { display: none !important; }
